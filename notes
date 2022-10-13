@@ -1,0 +1,43 @@
+WIRESHARK:
+----------
+
+sniffing network:
+
+ 1. Non Promiscous Mode   NIC(Network Interface Card)
+ 2. Promiscous Mode
+
+Switch is better than Hub, As it sends signals only to specific device
+
+When device first connects to SWITCH it registers "MAC ADDRESS  and Port number" of computer device 
+Routing through a specific port number and registered MAC address doesn't mean they provide security
+it only meant for it's speed. But there are still some devices that can make SWITCH  work like HUB.
+
+Switch fails to work cause every switch ports have very little amount of memory overwriting this
+memory with fake MAC address helps to exploit 
+
+
+fail open
+fail closed
+
+
+tools:
+-------
+
+dsniff
+magicresue
+services.py
+arpspoof
+libnids
+services
+magic
+macof
+
+
+wireshark
+armitage  
+
+Most important tools to learn.
+
+
+
+

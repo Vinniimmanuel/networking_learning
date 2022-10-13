@@ -1,0 +1,18 @@
+
+dBm(Decible per milliwatt) used to measure signal strength
+
+30 dBm: This is the maximum signal strength. If you have this measurement, you are likely standing right next to the access point.
+
+-50 dBm: This is considered an excellent signal strength.
+
+-60 dBm: This is a good signal strength.
+
+-67 dBm: This is a reliable signal strength. This is the minimum for any online services that require a reliable connection and Wi-Fi signal strength.
+
+-70 dBm: This is not a strong signal strength. You may be able to check your email.
+
+-80 dBm: This is an unreliable signal strength. You may be able to connect to your network, but you will not support most online activity.
+
+-90 dBm: This is a bad signal strength. You are not likely to connect to internet at this level.
+
+ideally signal may be between -60dBm to -50dBm

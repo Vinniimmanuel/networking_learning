@@ -1,0 +1,10 @@
+crunch min max characters -t <pattern> -o filename
+
+			@ will insert lower case characters
+            , will insert upper case characters
+            % will insert numbers
+            ^ will insert symbols
+
+-z gzip < bzip2 < 7z
+
+-f /usr/share/crunch/wordlist.lst

